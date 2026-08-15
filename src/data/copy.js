@@ -19,8 +19,8 @@ export const copy = {
     ],
     photoMeta: [
       ["FILE", "PORTRAIT.JPG"],
-      ["SIZE", "819 × 1024"],
-      ["POS", "72 / 42"],
+      ["SIZE", "1024 × 814"],
+      ["POS", "45 / 78"],
       ["STAT", "ONLINE"],
     ],
     scroll: "Листать",

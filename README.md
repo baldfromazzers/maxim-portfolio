@@ -1,11 +1,17 @@
 # Максим / чтобы оно работало
 
+**Live:** [https://baldfromazzers.github.io/maxim-portfolio/](https://baldfromazzers.github.io/maxim-portfolio/)
+
 Персональный сайт-портфолио: чёрно-белый editorial lookbook с техническими метаданными. Не шаблонный developer portfolio.
 
 Живые проекты в индексе:
 
 - [Турнавстречу](https://турнавстречу.рф/)
 - [All Games Code](https://allgamescode.ru/)
+- [ITT Market](https://itt-market.ru/)
+- [Блефаровит](https://blefarovit.ru/)
+- [Офтолик](https://oftolik.ru/)
+- [Никатэн](https://никатэн.рф/)
 
 ## Стек
 

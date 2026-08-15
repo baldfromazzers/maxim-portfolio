@@ -5,7 +5,7 @@ import styles from "./Hero.module.css";
 
 export function Hero() {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 700], [0, 56]);
+  const y = useTransform(scrollY, [0, 700], [0, -12]);
 
   return (
     <section id="top" className={styles.hero}>
@@ -14,8 +14,8 @@ export function Hero() {
           <motion.img
             src={portrait}
             alt="Максим"
-            width={819}
-            height={1024}
+            width={1024}
+            height={814}
             style={{ y }}
           />
           <span className={`${styles.mark} ${styles.tl}`} />
