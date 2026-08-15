@@ -1,0 +1,51 @@
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  color: #fff;
+  will-change: transform;
+}
+
+.cross {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+
+.cross::before {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.cross::after {
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.label {
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

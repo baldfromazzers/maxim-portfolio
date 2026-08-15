@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+dist-ssr/
+
+# local
+*.local
+.env
+.env.*
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# editor
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# original telegram export — site uses src/assets/portrait.jpg
+photo_*.jpg
+
+# misc
+*.tsbuildinfo

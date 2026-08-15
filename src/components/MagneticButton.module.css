@@ -1,0 +1,27 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid currentColor;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: transparent;
+  color: inherit;
+  transition: background 0.22s var(--ease), color 0.22s var(--ease);
+}
+
+.button:hover {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.paperBtn:hover,
+.button.paperBtn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}

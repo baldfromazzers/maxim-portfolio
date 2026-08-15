@@ -1,0 +1,101 @@
+export const copy = {
+  nav: {
+    brand: "MAXIM",
+    index: "Индекс",
+    projects: "Проекты",
+    contact: "Связь",
+    close: "Закрыть",
+  },
+  hero: {
+    kicker: "ISSUE 01 / PRODUCTION",
+    titleLines: ["Я делаю так,", "чтобы оно", "работало."],
+    lead: "Веб-разработка, чужой код, серверы и решения, из-за которых проект снова можно развивать. Без синергии и без «passionate».",
+    meta: [
+      ["SUBJ", "MAXIM"],
+      ["ROLE", "DEV / LEAD"],
+      ["STAT", "ONLINE"],
+      ["NOTE", "probably works"],
+    ],
+    photoMeta: [
+      ["FILE", "PORTRAIT.JPG"],
+      ["SIZE", "1280 × 1280"],
+      ["POS", "30 / 40"],
+      ["STAT", "ONLINE"],
+    ],
+    scroll: "Листать",
+  },
+  about: {
+    index: "02",
+    label: "Обо мне",
+    kicker: "MANIFESTO",
+    paragraphs: [
+      "Меня зовут Максим. Я занимаюсь веб-разработкой и технической частью проектов — не отдельными страницами, а тем, как это работает целиком.",
+      "Могу прийти туда, где «всё работает, но непонятно почему», найти причину и привести это в нормальное состояние.",
+      "Сейчас развиваюсь одновременно как разработчик, технический руководитель и человек, который однажды соберёт свой продукт.",
+    ],
+    asideLabel: "Факты, не резюме",
+    facts: [
+      "React, JavaScript, PHP, WordPress",
+      "Коммерческие проекты, не учебные лендинги",
+      "Архитектура, интеграции, серверы",
+      "Technical lead, когда нужно не только писать код",
+    ],
+    caption: "Иногда проблема действительно решается перезапуском.",
+  },
+  stack: {
+    index: "03",
+    label: "Стек",
+    kicker: "WHAT I WORK WITH",
+    note: "works on my machine",
+  },
+  projects: {
+    index: "04",
+    label: "Проекты",
+    kicker: "SELECTED WORK",
+    hint: "Наведи — будет превью. Кликни — живой сайт.",
+    open: "Открыть сайт",
+  },
+  work: {
+    index: "05",
+    label: "Что я делаю",
+    kicker: "SCOPE",
+    hint: "Наведи на строку.",
+  },
+  personal: {
+    index: "06",
+    label: "Заметки",
+    kicker: "OFF THE RECORD",
+    notes: [
+      {
+        id: "01",
+        title: "Свой продукт",
+        text: "Хочу однажды собрать штуку, которой пользуются. Не презентацию про рынок — рабочий сервис.",
+      },
+      {
+        id: "02",
+        title: "Чужой код",
+        text: "Интереснее проект, который уже существует и ведёт себя странно, чем чистый макет, который ещё никуда не деплоился.",
+      },
+      {
+        id: "03",
+        title: "Продакшен",
+        text: "Production is a different environment. Иногда проблема действительно решается перезапуском. Иногда — нет.",
+      },
+    ],
+  },
+  contact: {
+    index: "07",
+    label: "Связь",
+    kicker: "WRITE ME",
+    headline: "Написать",
+    lead: "Если проект уже горит — лучше сразу. Если нет — тоже можно.",
+    empty: "Контакты живут в одной строке: src/data/site.js",
+    hover: "deploy and pray",
+  },
+  footer: {
+    left: "v1.0 / static build",
+    mid: "deploy and pray",
+    ticker:
+      "probably works  —  it was one line of code  —  works on my machine  —  production is a different environment  —  404: motivation not found  —  yes, I touched the backend  —  deploy and pray  —  ",
+  },
+};

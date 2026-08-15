@@ -1,0 +1,16 @@
+:root {
+  --bg: #000000;
+  --fg: #ffffff;
+  --muted: #8a8a8a;
+  --line: #2a2a2a;
+  --metal: #c8c8c4;
+  --paper: #ffffff;
+  --ink: #111111;
+  --gray: #3a3a3a;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-h: 4.25rem;
+  --pad: clamp(1.1rem, 3.6vw, 3.5rem);
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-ui: "Outfit", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
