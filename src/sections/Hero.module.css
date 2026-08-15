@@ -15,7 +15,7 @@
   height: calc(100svh - var(--nav-h) + 3rem);
   margin: calc(var(--nav-h) + 0.4rem) 0 -3rem calc(var(--pad) * -0.28);
   overflow: hidden;
-  background: #111;
+  background: #1a1816;
 }
 
 .photo img {
@@ -24,12 +24,12 @@
   margin-left: -6%;
   object-fit: cover;
   object-position: 28% 38%;
-  filter: grayscale(1) contrast(1.16) brightness(0.96);
+  filter: contrast(1.06) saturate(1.08);
   transition: filter 0.4s var(--ease);
 }
 
 .photo:hover img {
-  filter: grayscale(1) contrast(1.28) brightness(1.02);
+  filter: contrast(1.1) saturate(1.18);
 }
 
 .mark {
@@ -143,7 +143,7 @@
 .title {
   font-family: var(--font-display);
   font-size: clamp(3.05rem, 8.4vw, 7.8rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 0.86;
   letter-spacing: -0.04em;
   margin-right: -7vw;

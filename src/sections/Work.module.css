@@ -1,5 +1,5 @@
 .hint {
-  color: #6a6a6a;
+  color: #6d665f;
   margin: -2rem 0 1.4rem;
 }
 
@@ -11,26 +11,26 @@
   align-items: baseline;
   text-align: left;
   padding: 1.15rem 0;
-  border-top: 1px solid #e4e4e4;
+  border-top: 1px solid #d8cfc4;
   color: inherit;
   transition: opacity 0.22s var(--ease);
 }
 
 .work li:last-child .row {
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #d8cfc4;
 }
 
 .title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 4.3rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 0.92;
   letter-spacing: -0.03em;
 }
 
 .text {
   font-size: 1.02rem;
-  color: #5a5a5a;
+  color: #5f5852;
   max-width: 34rem;
   opacity: 0.35;
   transform: translateY(4px);

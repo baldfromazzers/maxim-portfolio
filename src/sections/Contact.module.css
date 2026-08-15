@@ -1,7 +1,7 @@
 .headline {
   font-family: var(--font-display);
   font-size: clamp(4.2rem, 16vw, 12rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 0.82;
   letter-spacing: -0.05em;
   margin: -0.4rem 0 1.4rem;
@@ -10,7 +10,7 @@
 .lead {
   max-width: 28rem;
   font-size: 1.15rem;
-  color: #4a4a4a;
+  color: #5c564f;
   margin-bottom: 2.2rem;
 }
 
@@ -21,10 +21,10 @@
 }
 
 .empty {
-  color: #6a6a6a;
+  color: #6d665f;
 }
 
 .hover {
   margin-top: 2.8rem;
-  color: #8a8a8a;
+  color: #8a837c;
 }

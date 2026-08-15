@@ -1,4 +1,4 @@
-# Максим — чтобы оно работало
+# Максим / чтобы оно работало
 
 Персональный сайт-портфолио: чёрно-белый editorial lookbook с техническими метаданными. Не шаблонный developer portfolio.
 
@@ -39,11 +39,11 @@ npm run preview
 
 Тексты, контакты и проекты вынесены из компонентов:
 
-- `src/data/site.js` — имя, SEO, Telegram / Email / GitHub
-- `src/data/copy.js` — весь копирайт
-- `src/data/projects.js` — выбранные проекты
-- `src/data/stack.js` — технологии
-- `src/data/work.js` — направления работы
+- `src/data/site.js`: имя, SEO, Telegram / Email / GitHub
+- `src/data/copy.js`: весь копирайт
+- `src/data/projects.js`: выбранные проекты
+- `src/data/stack.js`: технологии
+- `src/data/work.js`: направления работы
 
 Новый проект: добавь объект в массив `projects` (id, number, title, category, url, year, summary, preview).
 

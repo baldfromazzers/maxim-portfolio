@@ -4,8 +4,8 @@
   left: 0;
   z-index: 120;
   pointer-events: none;
-  mix-blend-mode: difference;
-  color: #fff;
+  mix-blend-mode: normal;
+  color: var(--accent);
   will-change: transform;
 }
 

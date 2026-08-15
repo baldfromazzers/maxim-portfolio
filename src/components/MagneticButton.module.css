@@ -14,14 +14,15 @@
 }
 
 .button:hover {
-  background: var(--fg);
-  color: var(--bg);
-  border-color: var(--fg);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 18px var(--accent-soft);
 }
 
 .paperBtn:hover,
 .button.paperBtn:hover {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 18px var(--accent-soft);
 }

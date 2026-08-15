@@ -30,7 +30,7 @@ export const copy = {
     label: "Обо мне",
     kicker: "MANIFESTO",
     paragraphs: [
-      "Меня зовут Максим. Я занимаюсь веб-разработкой и технической частью проектов — не отдельными страницами, а тем, как это работает целиком.",
+      "Меня зовут Максим. Я занимаюсь веб-разработкой и технической частью проектов: не отдельными страницами, а тем, как это работает целиком.",
       "Могу прийти туда, где «всё работает, но непонятно почему», найти причину и привести это в нормальное состояние.",
       "Сейчас развиваюсь одновременно как разработчик, технический руководитель и человек, который однажды соберёт свой продукт.",
     ],
@@ -53,7 +53,7 @@ export const copy = {
     index: "04",
     label: "Проекты",
     kicker: "SELECTED WORK",
-    hint: "Наведи — будет превью. Кликни — живой сайт.",
+    hint: "Наведи: будет превью. Кликни: живой сайт.",
     open: "Открыть сайт",
   },
   work: {
@@ -70,7 +70,7 @@ export const copy = {
       {
         id: "01",
         title: "Свой продукт",
-        text: "Хочу однажды собрать штуку, которой пользуются. Не презентацию про рынок — рабочий сервис.",
+        text: "Хочу однажды собрать штуку, которой пользуются. Не презентацию про рынок, а рабочий сервис.",
       },
       {
         id: "02",
@@ -80,7 +80,7 @@ export const copy = {
       {
         id: "03",
         title: "Продакшен",
-        text: "Production is a different environment. Иногда проблема действительно решается перезапуском. Иногда — нет.",
+        text: "Production is a different environment. Иногда проблема действительно решается перезапуском. Иногда нет.",
       },
     ],
   },
@@ -88,7 +88,7 @@ export const copy = {
     index: "07",
     label: "Поле",
     kicker: "LOOK WHAT I CAN DO",
-    lead: "Курсор — гравитация. Кликни, если хочешь всё сломать. Оно соберётся обратно. Probably.",
+    lead: "Курсор это гравитация. Кликни, если хочешь всё сломать. Оно соберётся обратно. Probably.",
     hint: "Наведи. Кликни. Не обновляй страницу.",
     scatter: "Рассыпать",
     assemble: "Собрать",
@@ -101,7 +101,7 @@ export const copy = {
     label: "Связь",
     kicker: "WRITE ME",
     headline: "Написать",
-    lead: "Если проект уже горит — лучше сразу. Если нет — тоже можно.",
+    lead: "Если проект уже горит, лучше сразу. Если нет, тоже можно.",
     empty: "Почта и Telegram появятся здесь. Пока смотри живые проекты выше.",
     hover: "deploy and pray",
   },
@@ -109,6 +109,6 @@ export const copy = {
     left: "v1.0 / static build",
     mid: "deploy and pray",
     ticker:
-      "probably works  —  it was one line of code  —  works on my machine  —  production is a different environment  —  404: motivation not found  —  yes, I touched the backend  —  deploy and pray  —  ",
+      "probably works  /  it was one line of code  /  works on my machine  /  production is a different environment  /  404: motivation not found  /  yes, I touched the backend  /  deploy and pray  /  ",
   },
 };

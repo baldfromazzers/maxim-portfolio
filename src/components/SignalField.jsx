@@ -12,8 +12,8 @@ function sampleGlyph(width, height, text, gap) {
   if (!ctx) return [];
 
   const size = Math.min(width * 0.18, height * 0.52);
-  ctx.fillStyle = "#fff";
-  ctx.font = `300 ${size}px Fraunces, "Times New Roman", serif`;
+  ctx.fillStyle = "#ece6de";
+  ctx.font = `600 ${size}px Syne, Arial, sans-serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillText(text, width / 2, height / 2 + size * 0.04);
@@ -45,6 +45,8 @@ export function SignalField({ reduced = false }) {
     mouse: { x: -9999, y: -9999, down: false },
     mode: "repel",
     shocks: [],
+    springHold: 0,
+    assembleBoost: 0,
     width: 0,
     height: 0,
     dpr: 1,
@@ -81,18 +83,24 @@ export function SignalField({ reduced = false }) {
     const resize = () => {
       const rect = wrap.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      state.width = Math.max(320, Math.floor(rect.width));
-      state.height = Math.max(280, Math.floor(rect.height));
+      const width = Math.max(320, Math.floor(rect.width));
+      const height = Math.max(280, Math.floor(rect.height));
+      const sizeChanged = width !== state.width || height !== state.height;
+
+      state.width = width;
+      state.height = height;
       state.dpr = dpr;
-      canvas.width = state.width * dpr;
-      canvas.height = state.height * dpr;
-      canvas.style.width = `${state.width}px`;
-      canvas.style.height = `${state.height}px`;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const gap = state.width < 640 ? 7 : 5;
-      state.particles = sampleGlyph(state.width, state.height, WORD, gap);
-      setHud((prev) => ({ ...prev, count: state.particles.length }));
+      if (sizeChanged || state.particles.length === 0) {
+        const gap = width < 640 ? 7 : 5;
+        state.particles = sampleGlyph(width, height, WORD, gap);
+        setHud((prev) => ({ ...prev, count: state.particles.length }));
+      }
     };
 
     const localPoint = (event) => {
@@ -127,7 +135,7 @@ export function SignalField({ reduced = false }) {
     };
 
     const drawGrid = () => {
-      ctx.strokeStyle = "rgba(255,255,255,0.05)";
+      ctx.strokeStyle = "rgba(215,4,41,0.08)";
       ctx.lineWidth = 1;
       const step = 40;
       ctx.beginPath();
@@ -162,8 +170,15 @@ export function SignalField({ reduced = false }) {
       ctx.clearRect(0, 0, state.width, state.height);
       drawGrid();
 
-      const spring = reduced ? 1 : 0.055;
-      const damp = reduced ? 0 : 0.86;
+      if (state.springHold > 0) state.springHold -= 1;
+      if (state.assembleBoost > 0) state.assembleBoost *= 0.9;
+
+      const spring = reduced
+        ? 1
+        : state.springHold > 0
+          ? 0.006
+          : 0.05 + state.assembleBoost * 0.12;
+      const damp = reduced ? 0 : state.springHold > 0 ? 0.94 : 0.86;
       const radius = 150;
       const strength = state.mode === "attract" ? 1.15 : 1.65;
 
@@ -197,7 +212,7 @@ export function SignalField({ reduced = false }) {
 
         const displace = Math.hypot(p.x - p.ox, p.y - p.oy);
         if (displace > 6) {
-          ctx.strokeStyle = `rgba(200,200,196,${Math.min(0.28, displace / 240)})`;
+          ctx.strokeStyle = `rgba(215,4,41,${Math.min(0.35, displace / 220)})`;
           ctx.beginPath();
           ctx.moveTo(p.ox, p.oy);
           ctx.lineTo(p.x, p.y);
@@ -205,8 +220,10 @@ export function SignalField({ reduced = false }) {
         }
       }
 
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = "#ece6de";
       for (const p of state.particles) {
+        const displace = Math.hypot(p.x - p.ox, p.y - p.oy);
+        ctx.fillStyle = displace > 10 ? "#d70429" : "#ece6de";
         ctx.fillRect(p.x - 1.1, p.y - 1.1, 2.2, 2.2);
       }
 
@@ -214,14 +231,14 @@ export function SignalField({ reduced = false }) {
       for (const shock of state.shocks) {
         shock.r += 7;
         shock.life -= 0.03;
-        ctx.strokeStyle = `rgba(200,200,196,${shock.life * 0.55})`;
+        ctx.strokeStyle = `rgba(215,4,41,${shock.life * 0.6})`;
         ctx.beginPath();
         ctx.arc(shock.x, shock.y, shock.r, 0, Math.PI * 2);
         ctx.stroke();
       }
 
       if (state.mouse.x > 0) {
-        ctx.strokeStyle = "rgba(200,200,196,0.7)";
+        ctx.strokeStyle = "rgba(215,4,41,0.75)";
         ctx.beginPath();
         ctx.moveTo(state.mouse.x - 10, state.mouse.y);
         ctx.lineTo(state.mouse.x + 10, state.mouse.y);
@@ -253,22 +270,28 @@ export function SignalField({ reduced = false }) {
     };
   }, [reduced]);
 
-  const scatter = () => {
+  const scatter = (event) => {
+    event.stopPropagation();
     const { particles, width, height } = engine.current;
+    engine.current.springHold = 110;
+    engine.current.assembleBoost = 0;
     for (const p of particles) {
-      p.vx += (Math.random() - 0.5) * 38;
-      p.vy += (Math.random() - 0.5) * 38;
-      p.x += (Math.random() - 0.5) * 40;
-      p.y += (Math.random() - 0.5) * 24;
-      p.x = Math.max(0, Math.min(width, p.x));
-      p.y = Math.max(0, Math.min(height, p.y));
+      p.vx = (Math.random() - 0.5) * 58;
+      p.vy = (Math.random() - 0.5) * 48;
+      p.x += (Math.random() - 0.5) * 90;
+      p.y += (Math.random() - 0.5) * 70;
+      p.x = Math.max(8, Math.min(width - 8, p.x));
+      p.y = Math.max(8, Math.min(height - 8, p.y));
     }
   };
 
-  const assemble = () => {
+  const assemble = (event) => {
+    event.stopPropagation();
+    engine.current.springHold = 0;
+    engine.current.assembleBoost = 1;
     for (const p of engine.current.particles) {
-      p.vx = (p.ox - p.x) * 0.08;
-      p.vy = (p.oy - p.y) * 0.08;
+      p.vx = (p.ox - p.x) * 0.28;
+      p.vy = (p.oy - p.y) * 0.28;
     }
   };
 
@@ -297,15 +320,26 @@ export function SignalField({ reduced = false }) {
         </p>
       </div>
       <div className={styles.controls}>
-        <button type="button" onClick={scatter} data-cursor="бум">
+        <button
+          type="button"
+          onClick={scatter}
+          onPointerDown={(event) => event.stopPropagation()}
+          data-cursor="бум"
+        >
           {copy.lab.scatter}
         </button>
-        <button type="button" onClick={assemble} data-cursor="назад">
+        <button
+          type="button"
+          onClick={assemble}
+          onPointerDown={(event) => event.stopPropagation()}
+          data-cursor="назад"
+        >
           {copy.lab.assemble}
         </button>
         <button
           type="button"
           onClick={() => setMode((value) => (value === "repel" ? "attract" : "repel"))}
+          onPointerDown={(event) => event.stopPropagation()}
           data-cursor="режим"
         >
           {mode === "repel" ? copy.lab.attract : copy.lab.repel}

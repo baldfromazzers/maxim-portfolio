@@ -16,6 +16,13 @@
   padding: 10px;
 }
 
+.cubeSlot {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 8;
+}
+
 .mark {
   position: absolute;
   width: 14px;

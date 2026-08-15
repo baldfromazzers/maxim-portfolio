@@ -1,16 +1,18 @@
 :root {
-  --bg: #000000;
-  --fg: #ffffff;
-  --muted: #8a8a8a;
-  --line: #2a2a2a;
-  --metal: #c8c8c4;
-  --paper: #ffffff;
-  --ink: #111111;
-  --gray: #3a3a3a;
+  --bg: #141312;
+  --fg: #ece6de;
+  --muted: #8d8680;
+  --line: #2e2a27;
+  --metal: #c4b6aa;
+  --paper: #e7e0d6;
+  --ink: #171513;
+  --gray: #3a3532;
+  --accent: #d70429;
+  --accent-soft: rgba(215, 4, 41, 0.28);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --nav-h: 4.25rem;
   --pad: clamp(1.1rem, 3.6vw, 3.5rem);
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-ui: "Outfit", system-ui, sans-serif;
+  --font-display: "Syne", "Arial Narrow", sans-serif;
+  --font-ui: "Manrope", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }

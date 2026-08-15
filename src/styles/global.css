@@ -25,8 +25,8 @@ body.has-cursor button {
 }
 
 ::selection {
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--accent);
+  color: #fff;
 }
 
 a {

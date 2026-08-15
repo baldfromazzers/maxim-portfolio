@@ -9,8 +9,8 @@
   justify-content: space-between;
   height: var(--nav-h);
   padding: 0 var(--pad);
-  mix-blend-mode: difference;
-  color: #fff;
+  color: var(--fg);
+  background: rgba(20, 19, 18, 0.72);
 }
 
 .scrolled {
@@ -21,6 +21,11 @@
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.28em;
+}
+
+.brand:hover,
+.desktop a:hover {
+  color: var(--accent);
 }
 
 .desktop {
@@ -76,8 +81,8 @@
     position: fixed;
     inset: 0;
     z-index: 85;
-    background: #000;
-    color: #fff;
+    background: var(--bg);
+    color: var(--fg);
     mix-blend-mode: normal;
     align-items: flex-end;
     padding: 5rem var(--pad) 3rem;
@@ -104,7 +109,7 @@
     font-family: var(--font-display);
     font-size: clamp(2.4rem, 12vw, 4.5rem);
     line-height: 0.9;
-    font-weight: 300;
+    font-weight: 600;
   }
 
   .overlay span {

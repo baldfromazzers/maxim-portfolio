@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { copy } from "../data/copy";
 import { SectionHeader } from "../components/SectionHeader";
 import { SignalField } from "../components/SignalField";
+import { Cube } from "../components/Cube";
 import styles from "./Lab.module.css";
 
 export function Lab() {
@@ -32,6 +33,9 @@ export function Lab() {
           <span className={`${styles.mark} ${styles.tr}`} />
           <span className={`${styles.mark} ${styles.bl}`} />
           <span className={`${styles.mark} ${styles.br}`} />
+          <div className={styles.cubeSlot}>
+            <Cube />
+          </div>
           <SignalField reduced={reduced} />
         </div>
       </div>
