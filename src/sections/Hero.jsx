@@ -14,8 +14,8 @@ export function Hero() {
           <motion.img
             src={portrait}
             alt="Максим"
-            width={1280}
-            height={1280}
+            width={819}
+            height={1024}
             style={{ y }}
           />
           <span className={`${styles.mark} ${styles.tl}`} />
