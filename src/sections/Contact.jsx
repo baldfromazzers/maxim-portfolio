@@ -6,13 +6,22 @@ import { MagneticButton } from "../components/MagneticButton";
 import styles from "./Contact.module.css";
 
 function getLinks() {
-  const { telegram, email, github } = site.contacts;
+  const { telegram, phone, phoneLabel, email, github } = site.contacts;
   const links = [];
 
   if (telegram) {
     links.push({
-      label: "Telegram",
-      href: telegram.startsWith("http") ? telegram : `https://t.me/${telegram.replace(/^@/, "")}`,
+      label: `Telegram ${telegram.startsWith("@") ? telegram : `@${telegram}`}`,
+      href: telegram.startsWith("http")
+        ? telegram
+        : `https://t.me/${telegram.replace(/^@/, "")}`,
+    });
+  }
+
+  if (phone) {
+    links.push({
+      label: phoneLabel || phone,
+      href: `tel:${phone.replace(/\s/g, "")}`,
     });
   }
 
@@ -46,7 +55,7 @@ export function Contact() {
               <MagneticButton
                 key={link.label}
                 href={link.href}
-                external={!link.href.startsWith("mailto:")}
+                external={link.href.startsWith("http")}
                 variant="paper"
               >
                 {link.label}

@@ -8,6 +8,7 @@ import { Stack } from "./sections/Stack";
 import { Projects } from "./sections/Projects";
 import { Work } from "./sections/Work";
 import { Personal } from "./sections/Personal";
+import { Lab } from "./sections/Lab";
 import { Contact } from "./sections/Contact";
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         <Projects />
         <Work />
         <Personal />
+        <Lab />
         <Contact />
       </main>
       <Footer />

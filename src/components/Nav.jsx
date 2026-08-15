@@ -5,6 +5,7 @@ import styles from "./Nav.module.css";
 const links = [
   { href: "#index", label: copy.nav.index },
   { href: "#projects", label: copy.nav.projects },
+  { href: "#lab", label: copy.nav.lab },
   { href: "#contact", label: copy.nav.contact },
 ];
 

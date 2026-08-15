@@ -1,0 +1,76 @@
+.lead {
+  max-width: 36rem;
+  color: var(--muted);
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  margin-bottom: 0.7rem;
+}
+
+.hint {
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+
+.frame {
+  position: relative;
+  padding: 10px;
+}
+
+.mark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.mark::before,
+.mark::after {
+  content: "";
+  position: absolute;
+  background: var(--metal);
+}
+
+.mark::before {
+  width: 14px;
+  height: 1px;
+}
+
+.mark::after {
+  width: 1px;
+  height: 14px;
+}
+
+.tl {
+  top: 0;
+  left: 0;
+}
+
+.tr {
+  top: 0;
+  right: 0;
+}
+
+.tr::before,
+.tr::after {
+  right: 0;
+}
+
+.bl {
+  bottom: 0;
+  left: 0;
+}
+
+.bl::before {
+  bottom: 0;
+}
+
+.br {
+  bottom: 0;
+  right: 0;
+}
+
+.br::before,
+.br::after {
+  right: 0;
+  bottom: 0;
+}

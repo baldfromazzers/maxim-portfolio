@@ -8,7 +8,9 @@ export const site = {
     "Веб-разработка, архитектура и техническое руководство. React, PHP, WordPress. Прихожу туда, где всё работает, но непонятно почему.",
   year: new Date().getFullYear(),
   contacts: {
-    telegram: "",
+    telegram: "@no1ry",
+    phone: "+79168479860",
+    phoneLabel: "+7 916 847-98-60",
     email: "",
     github: "",
   },
