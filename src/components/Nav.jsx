@@ -53,23 +53,22 @@ export function Nav() {
         </button>
       </header>
 
-      <div
-        id="mobile-index"
-        className={`${styles.overlay} ${open ? styles.open : ""}`}
-      >
-        <nav aria-label="Мобильное меню">
-          {links.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-            >
-              <span>0{index + 1}</span>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {open ? (
+        <div id="mobile-index" className={`${styles.overlay} ${styles.open}`}>
+          <nav aria-label="Мобильное меню">
+            {links.map((link, index) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+              >
+                <span>0{index + 1}</span>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      ) : null}
     </>
   );
 }

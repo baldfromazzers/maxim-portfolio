@@ -89,7 +89,7 @@ export const copy = {
     kicker: "WRITE ME",
     headline: "Написать",
     lead: "Если проект уже горит — лучше сразу. Если нет — тоже можно.",
-    empty: "Контакты живут в одной строке: src/data/site.js",
+    empty: "Почта и Telegram появятся здесь. Пока смотри живые проекты выше.",
     hover: "deploy and pray",
   },
   footer: {
